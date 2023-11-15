@@ -1,0 +1,64 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.divider {
+  margin: 1rem 0;
+  borderTop: 1px solid lightgrey;
+}
+
+.todo-add-new {
+  display: flex;
+}
+
+.todo-add-new input {
+  padding: 0 0.5rem;
+  width: calc(100% - 100px);
+}
+
+.todo-add-new button {
+  width: 100px;
+}
+
+.filters {
+  margin-bottom: 1rem;
+}
+
+.filters-by-status, .filters-by-priority  {
+  display: flex;
+  gap: 10px;
+}
+
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+}
+.TodoItem h3 {
+  width: calc(100% - 170px);
+  text-align: left;
+}
+
+.TodoItem-actions {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  gap: 10px;
+}
+
+.TodoItem-actions .high {
+  color: red;
+}
+.TodoItem-actions .medium {
+  color: green;
+}
+.TodoItem-actions .low {
+  color: gray;
+}
