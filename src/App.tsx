@@ -9,11 +9,11 @@ function App() {
     <>      
       <div className="container">
         <h1>Todo List App</h1>   
-        <AddNewTodo />
-        <Divider />
         <Filters />
         <Divider />
         <TodoList />
+        <Divider />
+        <AddNewTodo />
       </div>     
     </>
   )

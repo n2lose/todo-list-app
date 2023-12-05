@@ -44,6 +44,13 @@
 .TodoItem h3 {
   width: calc(100% - 170px);
   text-align: left;
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+
+.TodoItem.completed h3 {
+  text-decoration: line-through;
 }
 
 .TodoItem-actions {
@@ -53,12 +60,12 @@
   gap: 10px;
 }
 
-.TodoItem-actions .high {
+.TodoItem-actions .High {
   color: red;
 }
-.TodoItem-actions .medium {
+.TodoItem-actions .Medium {
   color: green;
 }
-.TodoItem-actions .low {
+.TodoItem-actions .Low {
   color: gray;
 }

@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import PropTypes from "prop-types";
+import { useDispatch } from 'react-redux';
+import todoListslice from '../../redux/todoListslice';
 
-export interface TodoProps {
+export interface AddTodoProps {
   id: string;
   text: string;
   completed: boolean;  
@@ -9,13 +12,25 @@ export interface TodoProps {
   handleRemove?: (id: string) => void;
 }
 
-const Todo = (props: TodoProps) => {
-  console.log({ props });
+const Todo = (props: AddTodoProps) => {
+  const dispatch = useDispatch();
+  const [checked, setChecked] = useState(props.completed)
+
+  const handleToggle = (id: string)=> {
+    setChecked( prevState => prevState = !prevState);
+    dispatch(todoListslice.actions.toggleTodo(id))
+  }
+
   return (
-    <div className="TodoItem">
+    <div className={checked ? "TodoItem completed" :  "TodoItem"}>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={() => handleToggle(props.id)}
+        />
         <h3>{props.text}</h3>                
         <div className="TodoItem-actions">
-            <button>Toggle</button>                    
+            <button onClick={()=> handleToggle(props.id)}>DONE</button>                    
             <label className={props.priority}>{props.priority}</label>
         </div>
     </div>
